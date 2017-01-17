@@ -8,6 +8,13 @@ class Admin extends Controller
 {
     public function lst()
     {
+        $admin = new AdminModel();
+        $res = $admin->select();
+        foreach ($res as $key => $value) {
+            echo $value->name;
+            echo '<br />';
+        }
+        die;
         return view();
     }
 
