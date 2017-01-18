@@ -9,12 +9,8 @@ class Admin extends Controller
     public function lst()
     {
         $admin = new AdminModel();
-        $res = $admin->select();
-        foreach ($res as $key => $value) {
-            echo $value->name;
-            echo '<br />';
-        }
-        die;
+        $adminres = $admin->getadmin();
+        $this->assign('adminres',$adminres);
         return view();
     }
 
@@ -34,7 +30,7 @@ class Admin extends Controller
         return view();
     }
 
-    public function edit()
+    public function edit($id)
     {
         return view();
     }

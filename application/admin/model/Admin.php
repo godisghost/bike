@@ -19,4 +19,8 @@ class Admin extends Model
             return false;
         }
     }
+
+    public function getadmin(){
+        return $this::paginate(5);
+    }
 }
